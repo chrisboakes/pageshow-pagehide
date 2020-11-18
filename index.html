@@ -24,17 +24,17 @@
 
 		window.onpageshow = function ( event ) {
 			if (event.persisted) {
-				console.log('onpageshow - page 1, from cache');
+				console.log('onpageshow - homepage, from cache');
 			} else {
-				console.log('onpageshow - page 1, load');
+				console.log('onpageshow - homepage, load');
 			}
 		};
 
 		window.onpagehide = function ( event ) {
 			if (event.persisted) {
-				console.log('onpagehide - page 1');
+				console.log('onpagehide - homepage');
 			} else {
-				console.log('onpagehide - page 1, load');
+				console.log('onpagehide - homepage, load');
 			}
 		};
 	</script>
