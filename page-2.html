@@ -11,6 +11,14 @@
 	<h1>Page 2</h1>
 	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, laborum natus cum unde est optio, vel nulla
 		harum quod cupiditate eos aut hic distinctio culpa adipisci vero ut voluptas dolorum!</p>
+
+	<a href="/" class="app-header-back-button__link" aria-label="Go back to previous page" data-test="app-header-back-button" data-app-header-back-button="">
+		<svg class="app-header-back-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 12">
+			<path d="M3.4125 6L6.45 0.4875L6 0L0 6L6 12L6.45 11.5125L3.4125 6Z"></path>
+		</svg>
+		<span class="app-header-back-button__text">Back</span>
+	</a>
+
 	<ul>
 		<li>
 			<a href="index.html">Home Page</a>
@@ -21,6 +29,20 @@
 	</ul>
 
 	<script type="text/javascript">
+
+		const button = document.querySelector( '[data-app-header-back-button]' );
+
+		if ( button && window.history ) {
+			button.addEventListener( 'click', e => {
+				e.preventDefault();
+				if ( document.referrer !== '' ) {
+					window.history.back();
+				} else {
+					window.location.replace( '/' );
+				}
+			});
+		}
+
 		window.addEventListener('pagehide', () => {
 			console.log('pagehide - page 2');
 		});
