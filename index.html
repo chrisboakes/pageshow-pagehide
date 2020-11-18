@@ -20,26 +20,21 @@
 	</ul>
 
 	<script type="text/javascript">
-
-		window.addEventListener('unload', function () {});
-
-		window.addEventListener('pagehide', () => {
-			console.log( 'pagehide - index' );
-		});
-
-		window.addEventListener('pageshow', () => {
-			console.log( 'pageshow - index' );
-		});
+		console.log('Page load');
 
 		window.onpageshow = function ( event ) {
-			if ( event.persisted ) {
-				console.log( 'onpageshow - index' );
+			if (event.persisted) {
+				console.log('onpageshow - page 1, from cache');
+			} else {
+				console.log('onpageshow - page 1, load');
 			}
 		};
 
 		window.onpagehide = function ( event ) {
-			if ( event.persisted ) {
-				console.log( 'onpagehide - index' );
+			if (event.persisted) {
+				console.log('onpagehide - page 1');
+			} else {
+				console.log('onpagehide - page 1, load');
 			}
 		};
 	</script>
