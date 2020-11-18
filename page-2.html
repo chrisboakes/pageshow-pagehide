@@ -36,7 +36,7 @@
 			button.addEventListener( 'click', e => {
 				e.preventDefault();
 				if ( document.referrer !== '' ) {
-					window.history.back();
+					window.history.go( -1 );
 				} else {
 					window.location.replace( '/' );
 				}
