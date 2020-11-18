@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page Show/Page Hide Bug</title>
+</head>
+
+<body>
+	<h1>Page 2</h1>
+	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, laborum natus cum unde est optio, vel nulla
+		harum quod cupiditate eos aut hic distinctio culpa adipisci vero ut voluptas dolorum!</p>
+	<ul>
+		<li>
+			<a href="index.html">Home Page</a>
+		</li>
+		<li>
+			<a href="page-2.html">Page 2</a>
+		</li>
+	</ul>
+
+	<script type="text/javascript">
+		window.addEventListener('pagehide', () => {
+			console.log('pagehide - page 1');
+		});
+
+		window.addEventListener('pageshow', () => {
+			console.log('pageshow - page 1');
+		});
+
+		window.onpageshow = function ( event ) {
+			if (event.persisted) {
+				console.log('onpageshow - page 1');
+			}
+		};
+
+		window.onpagehide = function ( event ) {
+			if (event.persisted) {
+				console.log('onpagehide - page 1');
+			}
+		};
+	</script>
+</body>
+
+</html>
